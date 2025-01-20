@@ -7,33 +7,30 @@
             Console.Write("Introduceti cate elemente doriti sa aiba secventa de numere: ");
             int n = int.Parse(Console.ReadLine());
 
-            int[] v = new int[n];
-
-            Console.WriteLine("Introduceti elementele vectorului: ");
-            for (int i = 0; i < n; i++)
-            {
-                 v[i] = int.Parse(Console.ReadLine());
-            }
-
-            Console.WriteLine("intrudu un numar a: ");
+            Console.Write("Introdu un nr a: ");
             int a = int.Parse(Console.ReadLine());
 
-            if (v.Contains(a))
+            int element;
+            int pozitie = -1;
+            int pozitieA = -1;
+            for(int i = 0; i < n; i++)
             {
-                for(int i = 0;i < v.Length; i++)
+                element = int.Parse(Console.ReadLine());
+                pozitie++;
+                if(element == a)
                 {
-                    if (v[i] == a)
-                    {
-                        Console.WriteLine($"Pozitia pe care se afla a este: {i}");
-                    }
+                    pozitieA = pozitie;
                     
-                }
+                }  
             }
-            else
+            if(pozitieA == -1)
             {
                 Console.WriteLine(-1);
             }
-
+            else
+            {
+                Console.WriteLine($"Numarul {a} se afla pe pozitia {pozitieA}");
+            }
         }
     }
 }
